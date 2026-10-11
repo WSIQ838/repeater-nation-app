@@ -16,7 +16,7 @@ Built from the sections the site already has.
 - **Clubs**: club list and detail, join, threads, officers, streak badges
 - **Parks & Summits**: POTA and SOTA, favorites, schedule an activation
 - **Forum**, **Marketplace**, **Equipment** (check out, return, reserve), **Messages**
-- **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Callsign Lookup**
+- **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Emergency & Situational Awareness** (alerts, emergency nets, SOS, I'm safe, go-kit)
 - **Me**: profile, notifications, privacy
 
 Phone: five tabs (Home, Repeaters, Nets, Clubs, More) plus a More hub. Tablet: a grouped side rail with list and detail side by side.
