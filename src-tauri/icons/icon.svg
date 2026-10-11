@@ -10,17 +10,7 @@
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" fill="url(#bg)"/>
-  <g transform="translate(30 26) scale(.94)">
-    <!-- signal waves from the antenna tip -->
-    <g fill="none" stroke="#f97316" stroke-linecap="round">
-      <path d="M573 163 A80 80 0 0 1 573 265" stroke-width="34"/>
-      <path d="M627 118 A150 150 0 0 1 627 310" stroke-width="34" opacity=".6"/>
-      <path d="M451 163 A80 80 0 0 0 451 265" stroke-width="34"/>
-      <path d="M397 118 A150 150 0 0 0 397 310" stroke-width="34" opacity=".6"/>
-    </g>
-    <!-- antenna and top knob -->
-    <rect x="484" y="214" width="56" height="170" rx="28" fill="#e5e7eb"/>
-    <circle cx="512" cy="214" r="34" fill="#f97316"/>
+  <g transform="translate(512 512) scale(1.25) translate(-512 -643)">
     <!-- monitor -->
     <rect x="232" y="340" width="560" height="380" rx="46" fill="url(#body)"/>
     <rect x="268" y="376" width="488" height="308" rx="26" fill="#0b1220"/>
