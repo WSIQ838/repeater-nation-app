@@ -17,11 +17,6 @@ Built from the sections the site already has.
 - **Parks & Summits**: POTA and SOTA, favorites, schedule an activation
 - **Forum**, **Marketplace**, **Equipment** (check out, return, reserve), **Messages**
 - **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Leaderboard and badges**, **Callsign Lookup**
-- **Radio**: opens the radio client
 - **Me**: profile, notifications, privacy
 
 Phone: five tabs (Home, Repeaters, Nets, Clubs, More) plus a More hub. Tablet: a grouped side rail with list and detail side by side.
-
-## Related
-
-- [repeater-nation-radio](https://github.com/WSIQ838/repeater-nation-radio): the desktop and phone radio client
