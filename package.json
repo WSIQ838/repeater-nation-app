@@ -1,15 +1,25 @@
 {
   "name": "repeater-nation-app",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build",
-    "check": "node --check src-tauri/shell.js"
+    "tauri:build": "tauri build"
+  },
+  "dependencies": {
+    "@base44/sdk": "^0.8.52",
+    "@tauri-apps/plugin-opener": "^2.5.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.8.0"
+    "@tauri-apps/cli": "^2.8.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.7"
   }
 }

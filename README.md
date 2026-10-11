@@ -6,29 +6,36 @@ Phone and tablet app for [Repeater Nation](https://repeaternation.com).
 
 Get the latest Android `.apk` and iPhone file from the [Releases page](https://github.com/WSIQ838/repeater-nation-app/releases/latest). iPhone install steps are in [docs/ios-install.md](docs/ios-install.md).
 
-## How it works today (v0.1)
+## What the app is (v0.2)
 
-The app opens the real Repeater Nation website and adds a tab bar on phones and small tablets: **Home, Repeaters, Nets, Clubs, More**. More opens a menu with Parks & Summits, Forum, Marketplace, Equipment, Trips, SDR Streams, Logbook, Tools, Messages, Emergency and Me. Sign in on the site's own sign-in page.
+A native phone and tablet app built with Tauri 2 and React. It has its own screens and reads the same data as the website through the Base44 account (`@base44/sdk`).
 
-- `src-tauri/shell.js` is the tab bar. It is injected into every page, because the site cannot be shown inside another page (it sends `X-Frame-Options: DENY`).
-- On screens 1024 px wide or more the site already has its own side menu, so the tab bar stays hidden.
-- Known limits of this first version: features that need location or the microphone inside the page (such as GPS Navigation) are not enabled yet.
+- **Phone:** bottom tabs (Home, Repeaters, Nets, Clubs, More). **Tablet (900 px and wider):** side menu with list and detail side by side.
+- **In the app now:** sign-in (email and password), Home, Repeaters (search, filters, detail, directions), Nets & Events, Clubs, Tools (frequency/offset, CTCSS/DCS, antenna, coax and SWR, power and ERP, distance, Morse), Me.
+- **Still opening on the website:** Parks & Summits, Forum, Marketplace, Equipment, Trips, SDR Streams, Logbook, Messages, Emergency. Each becomes a native screen in a later release.
+- **Not yet:** Google sign-in (needs a small change to the website's sign-in callback page), push notifications, maps.
 
-## Next: native screens
+The earlier v0.1 releases just showed the website with a tab bar on top.
 
-`index.html` is the clickable design for the full app (open it in a browser, toggle Phone / Tablet). Screens from that design will replace the website pages one at a time, starting with Tools.
+## Layout of the code
+
+- `src/App.jsx`: shell, navigation, tab bar and side menu.
+- `src/screens/`: one file per screen. `src/tools/`: the calculators.
+- `src/lib/api.js`: sign-in and all data access. Add `?mock` to the address to run with sample data and no sign-in.
+- `design/index.html`: the clickable design the screens follow.
 
 ## Build it yourself
 
 ```bash
 npm install
-npm run check              # syntax check of the tab bar script
-npm run tauri:dev          # desktop window, for trying the tab bar at a narrow width
+npm run dev                # the app in a browser, add ?mock for sample data
+npm run build              # production build into dist/
+npm run tauri:dev          # desktop window
 ```
 
-Android and iPhone builds run on GitHub Actions (`.github/workflows/android.yml` and `ios.yml`) whenever a tag like `v0.1.0` is pushed, or when started by hand from the Actions tab. They attach the files to the release for that version. Android builds are signed with the test key in `src-tauri/android/` until a real key is added as the repository secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD` and `ANDROID_KEY_ALIAS`.
+Android and iPhone builds run on GitHub Actions (`.github/workflows/android.yml` and `ios.yml`) when started by hand from the Actions tab or when a tag like `v0.2.0` is pushed. They attach the files to the release for the version in `package.json`. Android builds are signed with the test key in `src-tauri/android/` until a real key is added as the repository secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD` and `ANDROID_KEY_ALIAS`.
 
-## Screens in the design (`index.html`)
+## Screens in the design (`design/index.html`)
 
 Built from the sections the site already has.
 

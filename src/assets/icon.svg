@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <g transform="translate(512 512) scale(1.25) translate(-512 -643)">
+    <!-- monitor -->
+    <rect x="232" y="340" width="560" height="380" rx="46" fill="url(#body)"/>
+    <rect x="268" y="376" width="488" height="308" rx="26" fill="#0b1220"/>
+    <!-- screen contents -->
+    <!-- small signal mark, like the radio app -->
+    <g fill="none" stroke="#f97316" stroke-linecap="round" stroke-width="8">
+      <circle cx="700" cy="418" r="9" fill="#f97316" stroke="none"/>
+      <path d="M715.3 405.1 A20 20 0 0 1 715.3 430.9"/>
+      <path d="M684.7 405.1 A20 20 0 0 0 684.7 430.9"/>
+      <path d="M726.0 396.1 A34 34 0 0 1 726.0 439.9" opacity=".6"/>
+      <path d="M674.0 396.1 A34 34 0 0 0 674.0 439.9" opacity=".6"/>
+    </g>
+    <rect x="296" y="404" width="150" height="28" rx="10" fill="#34d399"/>
+    <rect x="296" y="450" width="104" height="204" rx="14" fill="#1e293b"/>
+    <circle cx="322" cy="478" r="10" fill="#f97316"/>
+    <circle cx="322" cy="518" r="10" fill="#475569"/>
+    <circle cx="322" cy="558" r="10" fill="#475569"/>
+    <circle cx="322" cy="598" r="10" fill="#475569"/>
+    <rect x="414" y="450" width="314" height="92" rx="16" fill="#1e293b"/>
+    <rect x="436" y="474" width="120" height="14" rx="7" fill="#f97316"/>
+    <rect x="436" y="504" width="200" height="12" rx="6" fill="#475569"/>
+    <rect x="414" y="562" width="150" height="92" rx="16" fill="#1e293b"/>
+    <rect x="580" y="562" width="148" height="92" rx="16" fill="#1e293b"/>
+    <rect x="436" y="586" width="70" height="14" rx="7" fill="#f97316"/>
+    <rect x="602" y="586" width="70" height="14" rx="7" fill="#475569"/>
+    <!-- stand -->
+    <rect x="476" y="716" width="72" height="84" fill="#e5e7eb"/>
+    <rect x="384" y="792" width="256" height="40" rx="20" fill="#c2410c"/>
+    <!-- keyboard -->
+    <rect x="292" y="862" width="440" height="84" rx="26" fill="url(#body)"/>
+    <g fill="#7c2d12" opacity=".75">
+      <rect x="326" y="884" width="62" height="16" rx="8"/>
+      <rect x="402" y="884" width="62" height="16" rx="8"/>
+      <rect x="478" y="884" width="62" height="16" rx="8"/>
+      <rect x="554" y="884" width="62" height="16" rx="8"/>
+      <rect x="630" y="884" width="62" height="16" rx="8"/>
+      <rect x="360" y="914" width="304" height="16" rx="8"/>
+    </g>
+  </g>
+</svg>
