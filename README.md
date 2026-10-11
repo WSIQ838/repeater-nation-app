@@ -16,6 +16,7 @@ Built from the sections the site already has.
 - **Clubs**: club list and detail, join, threads, officers, streak badges
 - **Parks & Summits**: POTA and SOTA, favorites, schedule an activation
 - **Forum**, **Marketplace**, **Equipment** (check out, return, reserve), **Messages**
+- **Tools** (12 working calculators and helpers): Offset & Tone, Antenna Length, Coax Loss & SWR, Range, Grid Square, Battery Runtime, UTC Clock, Phonetics, Morse (with sound), Band Plan, Export for CHIRP, Report a Repeater
 - **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Emergency & Situational Awareness** (alerts, emergency nets, SOS, I'm safe, go-kit)
 - **Me**: profile, notifications, privacy
 
