@@ -1,20 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffa733"/>
-      <stop offset="1" stop-color="#e5530a"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2230"/>
+      <stop offset="1" stop-color="#0b0e14"/>
+    </linearGradient>
+    <linearGradient id="or" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#ff6a00"/>
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" fill="url(#bg)"/>
-  <g fill="none" stroke="#ffffff" stroke-linecap="round">
-    <!-- signal waves -->
-    <path d="M 711.2 262.9 A 260 260 0 0 1 711.2 597.1" stroke-width="36"/>
-    <path d="M 312.8 262.9 A 260 260 0 0 0 312.8 597.1" stroke-width="36"/>
-    <path d="M 772.5 211.5 A 340 340 0 0 1 772.5 648.5" stroke-width="36" opacity=".6"/>
-    <path d="M 251.5 211.5 A 340 340 0 0 0 251.5 648.5" stroke-width="36" opacity=".6"/>
+  <!-- RN monogram -->
+  <g fill="none" stroke="url(#or)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M222 760 V400 H350 A92 92 0 0 1 350 584 H222"/>
+    <path d="M330 584 L440 760"/>
+    <path d="M590 760 V400 L810 760 V400"/>
   </g>
-  <!-- location pin -->
-  <path d="M512 840 C 395 715 322 600 322 430 A190 190 0 0 1 702 430 C 702 600 629 715 512 840 Z" fill="#ffffff"/>
-  <circle cx="512" cy="430" r="92" fill="#e5530a"/>
-  <circle cx="512" cy="430" r="40" fill="#ffffff"/>
+  <!-- beacon over the N -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round">
+    <circle cx="700" cy="262" r="30" fill="#ffffff" stroke="none"/>
+    <path d="M 636 218 A 90 90 0 0 0 636 306" stroke-width="30"/>
+    <path d="M 764 218 A 90 90 0 0 1 764 306" stroke-width="30"/>
+  </g>
 </svg>
