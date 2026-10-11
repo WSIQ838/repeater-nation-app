@@ -1,38 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ff5f00"/>
-      <stop offset="0.55" stop-color="#ff9a2e"/>
-      <stop offset="1" stop-color="#ffd08a"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#ea580c"/>
     </linearGradient>
   </defs>
-  <rect width="1024" height="1024" fill="url(#sky)"/>
-  <!-- sun -->
-  <circle cx="512" cy="700" r="270" fill="#fff1cf" opacity=".55"/>
-  <circle cx="512" cy="700" r="170" fill="#fff6e0" opacity=".7"/>
-  <!-- far hill -->
-  <path d="M0 790 C 150 700 300 700 430 750 C 520 785 640 700 780 710 C 880 718 960 760 1024 780 V1024 H0 Z" fill="#2a2f45" opacity=".55"/>
-  <!-- near hill -->
-  <path d="M0 830 C 170 790 330 790 430 752 C 480 734 545 734 594 752 C 700 792 860 790 1024 830 V1024 H0 Z" fill="#0f1623"/>
-  <!-- tower silhouette -->
-  <g fill="none" stroke="#0f1623" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M512 250 L402 748"/>
-    <path d="M512 250 L622 748"/>
-    <path d="M477 408 H547"/>
-    <path d="M447 548 H577"/>
-    <path d="M419 668 H605"/>
-    <path d="M477 408 L577 548"/>
-    <path d="M547 408 L447 548"/>
-    <path d="M447 548 L605 668"/>
-    <path d="M577 548 L419 668"/>
-    <path d="M512 250 V212"/>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- signal waves from the antenna tip -->
+  <g fill="none" stroke="#f97316" stroke-linecap="round">
+    <path d="M573 163 A80 80 0 0 1 573 265" stroke-width="34"/>
+    <path d="M627 118 A150 150 0 0 1 627 310" stroke-width="34" opacity=".6"/>
+    <path d="M451 163 A80 80 0 0 0 451 265" stroke-width="34"/>
+    <path d="M397 118 A150 150 0 0 0 397 310" stroke-width="34" opacity=".6"/>
   </g>
-  <!-- beacon and waves -->
-  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="28">
-    <circle cx="512" cy="185" r="30" fill="#ffffff" stroke="none"/>
-    <path d="M 566.0 129.2 A 88 88 0 0 1 566.0 240.8"/>
-    <path d="M 458.0 129.2 A 88 88 0 0 0 458.0 240.8"/>
-    <path d="M 618.2 87.5 A 160 160 0 0 1 618.2 282.5" opacity=".7"/>
-    <path d="M 405.8 87.5 A 160 160 0 0 0 405.8 282.5" opacity=".7"/>
+  <!-- antenna and top knob -->
+  <rect x="484" y="214" width="56" height="170" rx="28" fill="#e5e7eb"/>
+  <circle cx="512" cy="214" r="34" fill="#f97316"/>
+  <!-- side button -->
+  <rect x="304" y="470" width="50" height="130" rx="20" fill="#c2410c"/>
+  <!-- phone body -->
+  <rect x="322" y="340" width="380" height="590" rx="76" fill="url(#body)"/>
+  <!-- screen -->
+  <rect x="364" y="400" width="296" height="390" rx="30" fill="#0b1220"/>
+  <rect x="394" y="434" width="140" height="30" rx="10" fill="#34d399"/>
+  <rect x="394" y="488" width="236" height="24" rx="10" fill="#475569"/>
+  <rect x="394" y="534" width="236" height="76" rx="16" fill="#1e293b"/>
+  <rect x="414" y="556" width="96" height="14" rx="7" fill="#f97316"/>
+  <rect x="414" y="582" width="150" height="12" rx="6" fill="#475569"/>
+  <rect x="394" y="626" width="236" height="76" rx="16" fill="#1e293b"/>
+  <rect x="414" y="648" width="80" height="14" rx="7" fill="#f97316"/>
+  <rect x="414" y="674" width="170" height="12" rx="6" fill="#475569"/>
+  <!-- tab bar -->
+  <g>
+    <circle cx="420" cy="750" r="11" fill="#f97316"/>
+    <circle cx="466" cy="750" r="11" fill="#9ca3af"/>
+    <circle cx="512" cy="750" r="11" fill="#9ca3af"/>
+    <circle cx="558" cy="750" r="11" fill="#9ca3af"/>
+    <circle cx="604" cy="750" r="11" fill="#9ca3af"/>
   </g>
+  <!-- home bar -->
+  <rect x="442" y="846" width="140" height="20" rx="10" fill="#7c2d12" opacity=".75"/>
 </svg>
