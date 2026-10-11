@@ -4,31 +4,54 @@
       <stop offset="0" stop-color="#1b2230"/>
       <stop offset="1" stop-color="#0b0e14"/>
     </linearGradient>
-    <linearGradient id="or" gradientUnits="userSpaceOnUse" x1="320" y1="250" x2="704" y2="880">
+    <linearGradient id="or" gradientUnits="userSpaceOnUse" x1="200" y1="200" x2="840" y2="890">
       <stop offset="0" stop-color="#ffb347"/>
       <stop offset="1" stop-color="#ff6a00"/>
     </linearGradient>
   </defs>
   <rect width="1024" height="1024" fill="url(#bg)"/>
-  <!-- radio tower -->
-  <g fill="none" stroke="url(#or)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M512 290 L320 880"/>
-    <path d="M512 290 L704 880"/>
-    <path d="M460 450 H564"/>
-    <path d="M408 610 H616"/>
-    <path d="M359 760 H665"/>
-    <path d="M460 450 L616 610"/>
-    <path d="M564 450 L408 610"/>
-    <path d="M408 610 L665 760"/>
-    <path d="M616 610 L359 760"/>
-    <path d="M512 290 V250"/>
+
+  <!-- ground -->
+  <path d="M170 868 H854" stroke="url(#or)" stroke-width="40" stroke-linecap="round" fill="none" opacity=".55"/>
+
+  <!-- tower -->
+  <g fill="none" stroke="url(#or)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 330 L270 850"/>
+    <path d="M400 330 L530 850"/>
+    <path d="M365 470 H435"/>
+    <path d="M327 620 H473"/>
+    <path d="M295 750 H505"/>
+    <path d="M365 470 L473 620"/>
+    <path d="M435 470 L327 620"/>
+    <path d="M327 620 L505 750"/>
+    <path d="M473 620 L295 750"/>
+    <path d="M400 330 V262"/>
   </g>
+
+  <!-- yagi antenna on the tower -->
+  <g stroke="#ffffff" stroke-linecap="round" fill="none" stroke-width="20">
+    <path d="M418 400 H590"/>
+    <path d="M480 362 V438"/>
+    <path d="M530 372 V428"/>
+    <path d="M580 380 V420"/>
+  </g>
+
+  <!-- feeder cable to the shed -->
+  <path d="M480 690 Q560 690 612 680" stroke="#ffffff" stroke-width="14" stroke-linecap="round" fill="none" opacity=".8"/>
+
+  <!-- equipment shed -->
+  <path d="M580 700 L712 612 L844 700 Z" fill="#ffb347" stroke="#ffb347" stroke-width="16" stroke-linejoin="round"/>
+  <rect x="598" y="704" width="228" height="146" rx="8" fill="url(#or)"/>
+  <rect x="738" y="756" width="56" height="94" rx="6" fill="#0f141d"/>
+  <rect x="624" y="742" width="72" height="56" rx="8" fill="#0f141d"/>
+  <path d="M640 770 H680" stroke="#ffb347" stroke-width="10" stroke-linecap="round"/>
+
   <!-- beacon and signal waves -->
-  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="30">
-    <circle cx="512" cy="215" r="34" fill="#ffffff" stroke="none"/>
-    <path d="M 576.3 138.4 A 100 100 0 0 1 576.3 291.6"/>
-    <path d="M 447.7 138.4 A 100 100 0 0 0 447.7 291.6"/>
-    <path d="M 624.5 80.9 A 175 175 0 0 1 624.5 349.1" opacity=".65"/>
-    <path d="M 399.5 80.9 A 175 175 0 0 0 399.5 349.1" opacity=".65"/>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="28">
+    <circle cx="400" cy="226" r="32" fill="#ffffff" stroke="none"/>
+    <path d="M 457.4 163.7 A 92 92 0 0 1 457.4 288.3"/>
+    <path d="M 342.6 163.7 A 92 92 0 0 0 342.6 288.3"/>
+    <path d="M 508.8 118.6 A 165 165 0 0 1 508.8 333.4" opacity=".65"/>
+    <path d="M 291.2 118.6 A 165 165 0 0 0 291.2 333.4" opacity=".65"/>
   </g>
 </svg>
