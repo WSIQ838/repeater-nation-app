@@ -8,20 +8,19 @@ Design mockup only. Open `index.html` in a browser: a single self-contained page
 
 ## Screens in the mockup
 
-- **Home**: next net, members online, nearest repeaters, events, announcements
-- **Repeaters**: searchable directory with filters and a detail view
-- **Map**: repeater and member pins
-- **Community**: posts with verified-callsign badges
-- **Me**: profile and notification/privacy settings
+Built from the sections the site already has.
 
-Phone uses a bottom tab bar. Tablet uses a side rail with list and detail side by side.
+- **Home**: live net with check-in, XP and level, friends online, nearest repeaters, your clubs, upcoming events
+- **Repeaters**: directory with filters, list/map, ratings, photos, access requests
+- **Nets & Events**: live net check-in, weekly nets with streaks, event calendar
+- **Clubs**: club list and detail, join, threads, officers, streak badges
+- **Parks & Summits**: POTA and SOTA, favorites, schedule an activation
+- **Forum**, **Marketplace**, **Equipment** (check out, return, reserve), **Messages**
+- **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Leaderboard and badges**, **Callsign Lookup**
+- **Radio**: opens the radio client
+- **Me**: profile, notifications, privacy
 
-## Ideas not yet in the mockup
-
-- A Tools section: offset/tone, antenna length, coax loss, grid square, phonetic alphabet, contact log
-- Push notifications for nets and announcements
-- Offline repeater directory
-- Biometric sign-in with the existing Repeater Nation account
+Phone: five tabs (Home, Repeaters, Nets, Clubs, More) plus a More hub. Tablet: a grouped side rail with list and detail side by side.
 
 ## Related
 
