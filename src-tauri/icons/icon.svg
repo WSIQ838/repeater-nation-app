@@ -15,6 +15,14 @@
     <rect x="232" y="340" width="560" height="380" rx="46" fill="url(#body)"/>
     <rect x="268" y="376" width="488" height="308" rx="26" fill="#0b1220"/>
     <!-- screen contents -->
+    <!-- small signal mark, like the radio app -->
+    <g fill="none" stroke="#f97316" stroke-linecap="round" stroke-width="8">
+      <circle cx="700" cy="418" r="9" fill="#f97316" stroke="none"/>
+      <path d="M715.3 405.1 A20 20 0 0 1 715.3 430.9"/>
+      <path d="M684.7 405.1 A20 20 0 0 0 684.7 430.9"/>
+      <path d="M726.0 396.1 A34 34 0 0 1 726.0 439.9" opacity=".6"/>
+      <path d="M674.0 396.1 A34 34 0 0 0 674.0 439.9" opacity=".6"/>
+    </g>
     <rect x="296" y="404" width="150" height="28" rx="10" fill="#34d399"/>
     <rect x="296" y="450" width="104" height="204" rx="14" fill="#1e293b"/>
     <circle cx="322" cy="478" r="10" fill="#f97316"/>
