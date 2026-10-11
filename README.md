@@ -16,7 +16,7 @@ Built from the sections the site already has.
 - **Clubs**: club list and detail, join, threads, officers, streak badges
 - **Parks & Summits**: POTA and SOTA, favorites, schedule an activation
 - **Forum**, **Marketplace**, **Equipment** (check out, return, reserve), **Messages**
-- **Tools** (12 working calculators and helpers): Offset & Tone, Antenna Length, Coax Loss & SWR, Range, Grid Square, Battery Runtime, UTC Clock, Phonetics, Morse (with sound), Band Plan, Export for CHIRP, Report a Repeater
+- **Tools** ("Operator Tools", same 9 categories as the website): Most Used, Repeaters & Directories, Logbook & Awards, On the Air & Nets, Propagation & Spotting, Satellites, Digital Radio Networks, Weather & Situational Awareness, Calculators & Reference, HAM Learning. Search and category filters work. Tools that already have an app screen (Net Control, POTA, SOTA, Equipment, Logger, Emergency, SDR, Trips, directories) open it. The calculators work (Frequency, CTCSS/DCS, Channel Planner, Antenna, Coax, Power & ERP, Distance, Morse, FCC lookup). The rest show an example readout or open the full tool.
 - **Trips**, **SDR Streams**, **Logbook** (add contacts, export), **Emergency & Situational Awareness** (alerts, emergency nets, SOS, I'm safe, go-kit)
 - **Me**: profile, notifications, privacy
 
