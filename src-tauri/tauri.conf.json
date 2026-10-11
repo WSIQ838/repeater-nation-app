@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Repeater Nation",
+  "version": "0.1.0",
+  "identifier": "com.repeaternation.app",
+  "build": {
+    "frontendDist": "../www"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.ico", "icons/icon.png"],
+    "android": {
+      "minSdkVersion": 26
+    }
+  }
+}

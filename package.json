@@ -1,0 +1,15 @@
+{
+  "name": "repeater-nation-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "check": "node --check src-tauri/shell.js"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0"
+  }
+}
