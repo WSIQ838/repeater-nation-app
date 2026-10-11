@@ -1,34 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
   <defs>
-    <radialGradient id="glow" cx="50%" cy="38%" r="62%">
-      <stop offset="0" stop-color="#3a2108"/>
-      <stop offset="0.55" stop-color="#171a20"/>
-      <stop offset="1" stop-color="#0b0d10"/>
-    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffa733"/>
+      <stop offset="1" stop-color="#e5530a"/>
+    </linearGradient>
   </defs>
-  <rect width="1024" height="1024" fill="url(#glow)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round">
     <!-- signal waves -->
-    <g stroke="#ff8a1f" stroke-width="34">
-      <path d="M 458.9 189.6 A 130 130 0 0 0 394.2 345.0" stroke-width="34"/>
-      <path d="M 565.1 189.6 A 130 130 0 0 1 629.8 345.0"/>
-      <path d="M 414.8 187.8 A 230 230 0 0 0 301.3 302.8" opacity=".85"/>
-      <path d="M 609.2 187.8 A 230 230 0 0 1 722.7 302.8" opacity=".85"/>
-      <path d="M 372.5 126.5 A 330 330 0 0 0 213.0 261.4" opacity=".6"/>
-      <path d="M 651.5 126.5 A 330 330 0 0 1 811.0 261.4" opacity=".6"/>
-    </g>
-    <!-- tower -->
-    <g stroke="#ff8a1f" stroke-width="32">
-      <path d="M 512 430 L 340 860"/>
-      <path d="M 512 430 L 684 860"/>
-      <path d="M 460 560 L 564 560"/>
-      <path d="M 412 680 L 612 680"/>
-      <path d="M 368 790 L 656 790"/>
-      <path d="M 460 560 L 612 680"/>
-      <path d="M 564 560 L 412 680"/>
-      <path d="M 412 680 L 656 790"/>
-      <path d="M 612 680 L 368 790"/>
-    </g>
-    <circle cx="512" cy="400" r="46" fill="#ff8a1f" stroke="none"/>
+    <path d="M 711.2 262.9 A 260 260 0 0 1 711.2 597.1" stroke-width="36"/>
+    <path d="M 312.8 262.9 A 260 260 0 0 0 312.8 597.1" stroke-width="36"/>
+    <path d="M 772.5 211.5 A 340 340 0 0 1 772.5 648.5" stroke-width="36" opacity=".6"/>
+    <path d="M 251.5 211.5 A 340 340 0 0 0 251.5 648.5" stroke-width="36" opacity=".6"/>
   </g>
+  <!-- location pin -->
+  <path d="M512 840 C 395 715 322 600 322 430 A190 190 0 0 1 702 430 C 702 600 629 715 512 840 Z" fill="#ffffff"/>
+  <circle cx="512" cy="430" r="92" fill="#e5530a"/>
+  <circle cx="512" cy="430" r="40" fill="#ffffff"/>
 </svg>
