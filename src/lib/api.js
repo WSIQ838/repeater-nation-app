@@ -48,7 +48,7 @@ const friendly = (err) => {
 // Returns { member } when a saved sign-in still works, null when there is none or it was
 // refused, and { offline: true } when the server could not be reached.
 export async function restoreSession() {
-  if (MOCK) return { member: MOCK_ME };
+  if (MOCK) return /[?&]login/.test(location.search) ? null : { member: MOCK_ME };
   const token = savedToken();
   if (!token) return null;
   try {
@@ -62,9 +62,15 @@ export async function restoreSession() {
   }
 }
 
+const NEEDS_VERIFY = /verify your email/i;
+const errText = (err) => [err?.message, err?.response?.data?.detail, err?.response?.data?.message, err?.data?.message].filter(Boolean).join(" ");
+
 export async function signIn(email, password) {
-  if (MOCK) return { member: MOCK_ME };
   const e = email.trim();
+  if (MOCK) {
+    if (/^verify@/i.test(e)) throw Object.assign(new Error("Please verify your email before logging in."), { needsVerify: true });
+    return { member: MOCK_ME };
+  }
   if (!e || !password) throw new Error("Enter your Repeater Nation email and password.");
   try {
     await withTimeout(client().auth.loginViaEmailPassword(e, password));
@@ -72,8 +78,76 @@ export async function signIn(email, password) {
     if (!member) throw new Error("Signed in, but your account could not be loaded.");
     return { member };
   } catch (err) {
+    // Same rule as the website: an account whose email was never verified has to enter a code first.
+    if (NEEDS_VERIFY.test(errText(err))) throw Object.assign(new Error("Please verify your email."), { needsVerify: true });
     throw new Error(err?.message && !err?.response && err.message.length < 120 && !/network|timeout/i.test(err.message) ? err.message : friendly(err));
   }
+}
+
+// Sends a fresh 6-digit code to the member's email.
+export async function sendVerifyCode(email) {
+  if (MOCK) return;
+  try {
+    await withTimeout(client().auth.resendOtp(email.trim()));
+  } catch (err) {
+    const m = errText(err);
+    if (/not found/i.test(m)) throw new Error("We couldn't find an account with that email. Check the spelling, or create an account.");
+    if (/already verified/i.test(m)) throw new Error("That email is already verified. Sign in with your password.");
+    throw new Error(friendly(err));
+  }
+}
+
+// Checks the code, then signs in (the code reply carries the sign-in, or the password is used).
+export async function verifyEmailCode(email, code, password) {
+  if (MOCK) {
+    if (code !== "123456") throw new Error("That code didn't work. Use the code from the newest email.");
+    return { member: MOCK_ME };
+  }
+  const e = email.trim();
+  try {
+    const res = await withTimeout(client().auth.verifyOtp({ email: e, otpCode: code }));
+    const token = res?.access_token || res?.data?.access_token;
+    if (token) client().auth.setToken(token);
+    else if (password) await withTimeout(client().auth.loginViaEmailPassword(e, password));
+    else throw new Error("Email verified. Sign in with your password.");
+    const member = await withTimeout(client().auth.me());
+    if (!member) throw new Error("Verified, but your account could not be loaded.");
+    return { member };
+  } catch (err) {
+    if (err?.message && !err?.response && /^(Email verified|Verified,)/.test(err.message)) throw err;
+    throw new Error("That code didn't work. Use the code from the newest email.");
+  }
+}
+
+/* ---- Google, Facebook, Apple and Microsoft sign-in ----
+   Google and the others refuse to sign in inside an app's embedded window, so the sign-in opens
+   in the system browser. The website's /oauth/app-callback page sends the sign-in back to this app
+   through the repeaternation-app:// link (see src-tauri/tauri.conf.json). */
+export const PROVIDERS = [
+  { id: "google", name: "Google", mark: "G", color: "#ea4335" },
+  { id: "facebook", name: "Facebook", mark: "f", color: "#1877f2" },
+  { id: "apple", name: "Apple", mark: "A", color: "#e5e7eb" },
+  { id: "microsoft", name: "Microsoft", mark: "M", color: "#00a4ef" },
+];
+
+export function startProviderSignIn(provider) {
+  if (MOCK) return Promise.resolve();
+  // Same address the website's own sign-in buttons use; Google has no provider segment.
+  const seg = provider === "google" ? "" : `/${provider}`;
+  const back = `${SITE}/oauth/app-callback`;
+  return openOnSite(`${SITE}/api/apps/auth${seg}/login?app_id=${APP_ID}&from_url=${encodeURIComponent(back)}`);
+}
+
+// Called with the repeaternation-app://oauth/callback?access_token=... link. Returns { member } or null.
+export async function finishLinkSignIn(url) {
+  const u = new URL(url);
+  const q = new URLSearchParams(u.search);
+  const h = new URLSearchParams(String(u.hash || "").replace(/^#/, ""));
+  const token = q.get("access_token") || h.get("access_token");
+  if (!token) return null;
+  client().auth.setToken(token);
+  const member = await withTimeout(client().auth.me());
+  return member ? { member } : null;
 }
 
 export async function clearSession() {

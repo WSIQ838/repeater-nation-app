@@ -1,7 +1,7 @@
 {
   "name": "repeater-nation-app",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@base44/sdk": "^0.8.52",
+    "@tauri-apps/plugin-deep-link": "^2.6.2",
     "@tauri-apps/plugin-opener": "^2.5.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"

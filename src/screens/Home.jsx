@@ -1,6 +1,7 @@
 import { getLiveNets, getEvents } from "../lib/api";
 import { Head, State, useAsync, fmtDay } from "../components/ui";
 import { Icon } from "../icons";
+import { openOnSite } from "../lib/api";
 
 const greeting = () => {
   const h = new Date().getHours();
@@ -17,6 +18,14 @@ export default function Home({ me, go }) {
   return (
     <div className="pad">
       <Head eyebrow={greeting()} title={first ? <>{first}{me.callsign && <> · <span className="mono" style={{ fontSize: ".7em", color: "var(--accent)" }}>{me.callsign}</span></>}</> : "Welcome"} />
+
+      {me.callsign_verified === false && (
+        <button className="item" style={{ borderColor: "#6b5420", background: "#1d1a10" }} onClick={() => openOnSite("/callsign-management")}>
+          <span style={{ color: "var(--warn)" }}><Icon name="alert" /></span>
+          <div className="grow"><b>Add and verify your callsign</b><div className="mute sm">Finish this on the website to unlock transmitting and club features.</div></div>
+          <Icon name="ext" size={18} />
+        </button>
+      )}
 
       <div className="hero">
         <div className="eyebrow" style={{ color: "#ffb066" }}>{live.length ? "On the air now" : "Nets"}</div>

@@ -2,8 +2,12 @@
 
 A real phone and tablet app for Repeater Nation: its own screens, not the website.
 
-**What's in this version**
-- Sign in with your Repeater Nation email and password.
+**New in this version: all the sign-in methods from the website**
+- Continue with **Google, Facebook, Apple or Microsoft**. The sign-in opens in your browser and brings you back to the app.
+- **Email and password**, including the **email code** step for accounts that were never verified.
+- A reminder on Home if your callsign isn't verified yet.
+
+**What's in the app**
 - **Home** with live nets and upcoming events.
 - **Repeaters**: search the full directory, see frequency, offset, tone and notes, get directions.
 - **Nets & Events** and **Clubs**.
@@ -15,4 +19,4 @@ A real phone and tablet app for Repeater Nation: its own screens, not the websit
 
 **iPhone and iPad:** download the `-unsigned.ipa` and install it with Sideloadly. Steps are in [docs/ios-install.md](https://github.com/WSIQ838/repeater-nation-app/blob/main/docs/ios-install.md). The app has to be reinstalled every 7 days, an Apple rule for apps installed without a paid developer account.
 
-Signed up with Google? Set a password first on the website (Forgot password), then sign in here. Google sign-in in the app is coming.
+Creating a brand-new account still happens on the website (it asks for your callsign).

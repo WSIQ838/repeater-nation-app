@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { restoreSession, clearSession } from "./lib/api";
+import { getCurrent, onOpenUrl } from "@tauri-apps/plugin-deep-link";
+import { restoreSession, clearSession, finishLinkSignIn } from "./lib/api";
 import { useWide } from "./components/ui";
 import { Icon } from "./icons";
 import Login from "./screens/Login";
@@ -26,6 +27,7 @@ export default function App() {
   const [tab, setTab] = useState("home");
   const [view, setView] = useState("");
   const [toastText, setToastText] = useState("");
+  const [authNote, setAuthNote] = useState("");
   const timer = useRef();
 
   useEffect(() => {
@@ -33,6 +35,25 @@ export default function App() {
       if (r?.member) setMe(r.member);
       else { setOffline(!!r?.offline); setMe(null); }
     });
+  }, []);
+
+  // Coming back from a Google, Facebook, Apple or Microsoft sign-in in the browser.
+  useEffect(() => {
+    let stop;
+    const handle = async (urls) => {
+      for (const u of urls || []) {
+        if (!/^repeaternation-app:/i.test(u)) continue;
+        setAuthNote("Finishing sign-in…");
+        const r = await finishLinkSignIn(u).catch(() => null);
+        if (r?.member) { setMe(r.member); setAuthNote(""); }
+        else setAuthNote("That sign-in didn't finish. Try again.");
+      }
+    };
+    try {
+      getCurrent().then(handle).catch(() => {});
+      onOpenUrl(handle).then((f) => { stop = f; }).catch(() => {});
+    } catch { /* not running inside the app (browser preview) */ }
+    return () => { if (typeof stop === "function") stop(); };
   }, []);
 
   const go = useCallback((t, v = "") => { setTab(t); setView(v); }, []);
@@ -44,7 +65,7 @@ export default function App() {
   const signOut = async () => { await clearSession(); setMe(null); go("home"); };
 
   if (me === undefined) return <div className="login" style={{ alignItems: "center", color: "var(--mute)" }}>Loading…</div>;
-  if (me === null) return <Login onSignedIn={setMe} offline={offline} />;
+  if (me === null) return <Login onSignedIn={setMe} offline={offline} note={authNote} />;
 
   const back = () => setView("");
   let body;

@@ -11,11 +11,15 @@ Get the latest Android `.apk` and iPhone file from the [Releases page](https://g
 A native phone and tablet app built with Tauri 2 and React. It has its own screens and reads the same data as the website through the Base44 account (`@base44/sdk`).
 
 - **Phone:** bottom tabs (Home, Repeaters, Nets, Clubs, More). **Tablet (900 px and wider):** side menu with list and detail side by side.
-- **In the app now:** sign-in (email and password), Home, Repeaters (search, filters, detail, directions), Nets & Events, Clubs, Tools (frequency/offset, CTCSS/DCS, antenna, coax and SWR, power and ERP, distance, Morse), Me.
+- **In the app now:** sign-in (email and password with the email-code step, plus Google, Facebook, Apple and Microsoft), Home, Repeaters (search, filters, detail, directions), Nets & Events, Clubs, Tools (frequency/offset, CTCSS/DCS, antenna, coax and SWR, power and ERP, distance, Morse), Me.
 - **Still opening on the website:** Parks & Summits, Forum, Marketplace, Equipment, Trips, SDR Streams, Logbook, Messages, Emergency. Each becomes a native screen in a later release.
-- **Not yet:** Google sign-in (needs a small change to the website's sign-in callback page), push notifications, maps.
+- **Not yet:** creating a new account in the app (it opens the website, which asks for a callsign), push notifications, maps.
 
 The earlier v0.1 releases just showed the website with a tab bar on top.
+
+## Sign-in
+
+Same methods as the website's sign-in page. Email and password uses `loginViaEmailPassword`, and an account that was never verified gets the 6-digit email code screen (`resendOtp` / `verifyOtp`). Google, Facebook, Apple and Microsoft open the provider's sign-in in the system browser (they refuse embedded windows). The website's `/oauth/app-callback` page (in `DesktopOAuthCallback.jsx`) sends the sign-in back to the app through the `repeaternation-app://` link, which the deep-link plugin registers (see `src-tauri/tauri.conf.json`). The radio app uses `repeaternation://`, so the two apps never open each other.
 
 ## Layout of the code
 

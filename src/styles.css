@@ -109,6 +109,16 @@ h3 { font: 600 17px var(--display); margin: 0; letter-spacing: .02em; }
 .login h1 { font: 700 40px/1 var(--display); margin: 0 0 6px; }
 .login .err { margin: 10px 0 0; padding: 10px 12px; color: #ffb4b0; background: #2a1213; border: 1px solid #5a2326; border-radius: 12px; }
 
+.login { overflow-y: auto; justify-content: flex-start; padding-top: calc(36px + env(safe-area-inset-top, 0px)); }
+.login .note { margin: 10px 0 0; padding: 10px 12px; color: #cfe9d9; background: #0e2318; border: 1px solid #1d4d31; border-radius: 12px; }
+.providers { display: grid; gap: 10px; }
+.prov { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; font-weight: 600; }
+.prov:active { background: var(--panel2); }
+.prov .mark { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--panel2); font: 700 15px var(--display); }
+.or { display: flex; align-items: center; gap: 12px; margin: 16px 0; color: var(--mute); font-size: 12px; text-transform: uppercase; }
+.or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.otp { font: 500 26px var(--mono); letter-spacing: .4em; text-align: center; }
+
 /* forms and tools */
 .fld { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
 .fld label { font-size: 12px; color: var(--mute); }
